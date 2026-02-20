@@ -6,7 +6,7 @@ NAME		= megaphone
 
 # Compiler and flags
 CXX			= c++
-CXXFLAGS	= -Wall -Wextra -Werror -std=c++98
+CXXFLAGS	= -Wall -Wextra -Werror -Iinc -std=c++98
 
 # Source folders
 SRC_DIR		= .
