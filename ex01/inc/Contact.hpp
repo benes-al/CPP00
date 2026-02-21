@@ -11,7 +11,7 @@ private:
     std::string _lastName;
     std::string _nickName;
     std::string _phoneNumber;
-    std::string _darkestSecret;
+    std::string _darkestSecret;	
 
 public:
     //Setters
@@ -32,4 +32,4 @@ public:
 
 
 
-#endif
+#endif		

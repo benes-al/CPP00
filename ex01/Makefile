@@ -14,7 +14,8 @@ SRC_DIR		= src
 # Source files
 SRC_FILES	= \
 	$(SRC_DIR)/Contact.cpp \
-	$(SRC_DIR)/main.cpp
+	$(SRC_DIR)/main.cpp \
+	$(SRC_DIR)/PhoneBook.cpp \
 
 # Object files
 OBJ_FILES	= $(SRC_FILES:.cpp=.o)

@@ -10,22 +10,60 @@ int main(int argc, char **argv){
     std::cout << "Please enter your command:\n\"ADD\":to"
         "add a new contact\n\"SEARCH\":to search for a contact"
         "\n\"EXIT\":to exit your PhoneBook\n";
-    while (1){
+
+	while (1){
         std::getline(std::cin, input);
+
         if (input == "ADD"){
-            std::cout << "ADD ok\n";    
+            std::cout << "Please insert First Name:\n";    
+			std::getline(std::cin, input);
+        	while(input.empty()){
+            	std::cout << "Please insert First Name:\n";    
+				std::getline(std::cin, input);
+			}
+			newContact.setFirstName(input);
 
-            /* newContact.setFirstName(input);
-            std::getline(std::cin, input);
-            newContact.setLastName(input);
-            std::cout << newContact.getLastName() << std::endl; */
+			std::cout << "Please insert Last Name:\n";    
+			std::getline(std::cin, input);
+        	while(input.empty()){
+            	std::cout << "Please insert Last Name:\n";    
+				std::getline(std::cin, input);
+			}
+			newContact.setLastName(input);
 
+			std::cout << "Please insert Nick Name:\n";    
+			std::getline(std::cin, input);
+        	while(input.empty()){
+            	std::cout << "Please insert Nick Name:\n";    
+				std::getline(std::cin, input);
+			}
+			newContact.setNickName(input);
+
+			std::cout << "Please insert Phone Number:\n";    
+			std::getline(std::cin, input);
+        	while(input.empty()){
+            	std::cout << "Please insert Phone Number:\n";    
+				std::getline(std::cin, input);
+			}
+			newContact.setPhoneNumber(input);
+
+			std::cout << "Please insert Darkest Secret:\n";    
+			std::getline(std::cin, input);
+        	while(input.empty()){
+            	std::cout << "Please insert Darkest Secret:\n";    
+				std::getline(std::cin, input);
+			}
+			newContact.setDarkestSecret(input);
+			myPhoneBook.setContact(newContact);
+			std::cout << "New contact added!\n\nPlease enter your " 
+				"command:\n\"ADD\":to add a new contact\n\"SEARCH"
+				"\":to search for a contact\n\"EXIT\":to exit your"
+				" PhoneBook\n";    
         }
     
         else if (input == "SEARCH"){
-            std::cout << "Search ok\n";    
-
-        }
+        	myPhoneBook.searchContacts();
+		}
     
         else if (input == "EXIT"){
             return (0);

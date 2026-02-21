@@ -7,18 +7,25 @@
 #include <string>
 #include <iomanip>
 
+#define MAX_CONTACTS 8
+#define COLUMN_WIDTH 10
+
 class PhoneBook{
 private:
-    Contact _contacts[8];
+    Contact _contacts[MAX_CONTACTS];
     int     _quantity;
-    int     _index;
+	int		_index;
 
 public:
     //Setters
     void setContact(const Contact newContact);
-
+	
     //Getters
-    Contact getContact(int index) const;
-};
+	std::string formatColumn(std::string str) const;
+	void searchContacts() const;
+
+	//Constructor
+	PhoneBook();
+};	
 
 #endif
