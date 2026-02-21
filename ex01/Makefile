@@ -2,17 +2,19 @@
 #                               MAKEFILE CONFIG                                #
 # **************************************************************************** #
 
-NAME		= megaphone
+NAME		= myAwesomePhoneBook
 
 # Compiler and flags
 CXX			= c++
 CXXFLAGS	= -Wall -Wextra -Werror -Iinc -std=c++98
 
 # Source folders
-SRC_DIR		= .
+SRC_DIR		= src
 
 # Source files
-SRC_FILES	= $(SRC_DIR)/megaphone.cpp
+SRC_FILES	= \
+	$(SRC_DIR)/Contact.cpp \
+	$(SRC_DIR)/main.cpp
 
 # Object files
 OBJ_FILES	= $(SRC_FILES:.cpp=.o)

@@ -15,7 +15,7 @@ private:
 
 public:
     //Setters
-    void setfirstName(const std::string firstName);
+    void setFirstName(const std::string firstName);
     void setLastName(const std::string lastName);
     void setNickName(const std::string nickName);
     void setPhoneNumber(const std::string phoneNumber);
