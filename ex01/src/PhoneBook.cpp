@@ -8,12 +8,12 @@ PhoneBook::PhoneBook(){
 
 //Setters
 void PhoneBook::setContact(const Contact newContact){
-	//_index = (_index % MAX_CONTACTS);
+	_index = (_index % MAX_CONTACTS);
 	_contacts[_index] = newContact;
 	
-	while(_index < MAX_CONTACTS)
+	if (_index < MAX_CONTACTS)
 		_index++;
-	while (_quantity <= MAX_CONTACTS)
+	if (_quantity < MAX_CONTACTS)
 		_quantity++;
 }
 
@@ -26,13 +26,34 @@ std::string PhoneBook::formatColumn(std::string str) const{
 
 void PhoneBook::searchContacts() const{
 	int	index;
-	
-	for (index = 0; index < _quantity; index++){
+	int indexSelected;
+	std::string input;
+
+	if (this->_quantity == 0){
+		std::cout << "No contacts registered!\n"
+			<< "Please enter your command:\n";
+		return ;
+	}
+
+	for (index = 0; index < this->_quantity; index++){
 		std::cout << "|" << std::setw(10) << index
-		<< "|" << std::setw(10) << formatColumn(_contacts[index].getFirstName())
-		<< "|" << std::setw(10) << formatColumn(_contacts[index].getLastName())
-		<< "|" << std::setw(10) << formatColumn(_contacts[index].getNickName())
+		<< "|" << std::setw(10) << formatColumn(this->_contacts[index].getFirstName())
+		<< "|" << std::setw(10) << formatColumn(this->_contacts[index].getLastName())
+		<< "|" << std::setw(10) << formatColumn(this->_contacts[index].getNickName())
 		<< "|\n";
 	}
-}
 
+	std::cout << "Please select the contact index to search:\n";
+	std::getline(std::cin, input);
+	while(input.empty()){
+		std::cout << "Please select an existing contact index:\n";
+		std::getline(std::cin, input);
+	}
+
+	indexSelected = input.sat
+	if (input >= this->_quantity){
+		std::cout << "Please select an existing contact index!\n";
+
+	}
+
+}
