@@ -8,13 +8,13 @@ PhoneBook::PhoneBook(){
 
 //Setters
 void PhoneBook::setContact(const Contact newContact){
-	_index = (_index % MAX_CONTACTS);
-	_contacts[_index] = newContact;
+	this->_index = (this->_index % MAX_CONTACTS);
+	this->_contacts[_index] = newContact;
 	
-	if (_index < MAX_CONTACTS)
-		_index++;
-	if (_quantity < MAX_CONTACTS)
-		_quantity++;
+	if (this->_index < MAX_CONTACTS)
+		this->_index++;
+	if (this->_quantity < MAX_CONTACTS)
+		this->_quantity++;
 }
 
 //Getters
@@ -36,7 +36,11 @@ void PhoneBook::searchContacts() const{
 	}
 
 	for (index = 0; index < this->_quantity; index++){
-		std::cout << "|" << std::setw(10) << index
+		std::cout << "|" << std::setw(10) << "index"
+		<< "|" << std::setw(10) << "FirstName"
+		<< "|" << std::setw(10) << "LastName"
+		<< "|" << std::setw(10) << "NickName" << "\n"
+		<< "|" << std::setw(10) << index
 		<< "|" << std::setw(10) << formatColumn(this->_contacts[index].getFirstName())
 		<< "|" << std::setw(10) << formatColumn(this->_contacts[index].getLastName())
 		<< "|" << std::setw(10) << formatColumn(this->_contacts[index].getNickName())
