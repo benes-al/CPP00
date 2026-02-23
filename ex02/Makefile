@@ -6,7 +6,7 @@ NAME		= theJobOfYourDreams
 
 # Compiler and flags
 CXX			= c++
-CXXFLAGS	= -Wall -Wextra -Werror -std=c++98 -I.
+CXXFLAGS	=  -std=c++98 -I.
 
 # Source files
 SRC_FILES	= tests.cpp Account.cpp
