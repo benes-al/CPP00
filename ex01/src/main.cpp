@@ -41,7 +41,8 @@ int main(int argc, char **argv){
 
 			
 			std::cout << "Please insert Phone Number:\n";    
-			while (true){
+			bool isValid = false;
+			while (!isValid){
 				std::getline(std::cin, input);
 				
 				if (input.empty()){
@@ -49,7 +50,7 @@ int main(int argc, char **argv){
 					continue;
 				}
 				
-				bool isValid = true;
+				isValid = true;
 				for (size_t i = 0; i < input.length(); i++){
 					if (!isdigit(input[i])){
 						isValid = false;
@@ -57,8 +58,6 @@ int main(int argc, char **argv){
 						break;
 					}
 				}
-				if (isValid)
-					break;
 			}
 			newContact.setPhoneNumber(input);
 
