@@ -26,7 +26,7 @@ std::string PhoneBook::formatColumn(std::string str) const{
 
 void PhoneBook::searchContacts() const{
 	int	index;
-	int indexSelected;
+	int	selectedIndex = 0;
 	std::string input;
 
 	if (this->_quantity == 0){
@@ -44,16 +44,31 @@ void PhoneBook::searchContacts() const{
 	}
 
 	std::cout << "Please select the contact index to search:\n";
-	std::getline(std::cin, input);
-	while(input.empty()){
-		std::cout << "Please select an existing contact index:\n";
+	while(1){
 		std::getline(std::cin, input);
+		if (input.empty()){
+			std::cout << "Please enter a contact index:\n";
+		}
+	
+		else if (input.length() != 1 || !isdigit(input[0])){
+			std::cout << "Please select a valid contact index:\n";
+		}
+	
+		else if (isdigit(input[0])){
+			selectedIndex = input[0] - 48;
+			if (selectedIndex < 0 || selectedIndex >= this->_quantity){
+				std::cout << "Please select an existing contact index!\n";
+			}
+			else {
+				selectedIndex = input[0] - 48;
+				std::cout << "First name: " << this->_contacts[selectedIndex].getFirstName()
+			<< "\n" << "Last name: " << this->_contacts[selectedIndex].getLastName()
+			<< "\n" << "Nick name: " << this->_contacts[selectedIndex].getNickName()
+			<< "\n" << "Phone Number: " << this->_contacts[selectedIndex].getPhoneNumber()
+			<< "\n" << "Darkest Secret: " << this->_contacts[selectedIndex].getDarkestSecret()
+			<< "\n\n";
+			return ;
+			}
+		}
 	}
-
-	indexSelected = input.sat
-	if (input >= this->_quantity){
-		std::cout << "Please select an existing contact index!\n";
-
-	}
-
 }

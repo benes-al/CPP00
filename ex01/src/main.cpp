@@ -7,12 +7,12 @@ int main(int argc, char **argv){
     PhoneBook myPhoneBook;
     std::string input;
 
-    std::cout << "Please enter your command:\n\"ADD\":to"
-        "add a new contact\n\"SEARCH\":to search for a contact"
-        "\n\"EXIT\":to exit your PhoneBook\n";
-
+	
 	while (1){
-        std::getline(std::cin, input);
+		std::cout << "Please enter your command:\n\"ADD\":to"
+			" add a new contact\n\"SEARCH\":to search for a contact"
+			"\n\"EXIT\":to exit your PhoneBook\n";
+		std::getline(std::cin, input);
 
         if (input == "ADD"){
             std::cout << "Please insert First Name:\n";    
@@ -57,10 +57,7 @@ int main(int argc, char **argv){
 
 			myPhoneBook.setContact(newContact);
 			
-			std::cout << "New contact added!\n\nPlease enter your " 
-				"command:\n\"ADD\":to add a new contact\n\"SEARCH"
-				"\":to search for a contact\n\"EXIT\":to exit your"
-				" PhoneBook\n";
+			std::cout << "New contact added!\n";
         }
     
         else if (input == "SEARCH"){
@@ -71,7 +68,7 @@ int main(int argc, char **argv){
             return (0);
         }
         else
-            std::cout << "Please enter a valid command\n";    
+            std::cout << "Please enter a valid command!\n\n";    
     }
     return (0);
 }
