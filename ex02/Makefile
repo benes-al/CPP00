@@ -6,14 +6,10 @@ NAME		= theJobOfYourDreams
 
 # Compiler and flags
 CXX			= c++
-CXXFLAGS	= -Wall -Wextra -Werror -Iinc -std=c++98
-
-# Source folders
-SRC_DIR		= src
+CXXFLAGS	= -Wall -Wextra -Werror -std=c++98 -I.
 
 # Source files
-SRC_FILES	= \
-	$(SRC_DIR)/ \
+SRC_FILES	= tests.cpp Account.cpp
 
 # Object files
 OBJ_FILES	= $(SRC_FILES:.cpp=.o)
