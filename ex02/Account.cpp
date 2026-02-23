@@ -28,3 +28,21 @@ void Account::displayAccountsInfos( void ) {
         << _totalAmount << ";deposits:" << _totalNbDeposits 
         << ";withdrawals:" << _totalNbWithdrawals << "\n";        
 }
+
+
+// Constructor Stub
+Account::Account(int initial_deposit) : _amount(initial_deposit) {
+    // Leave empty for now just to test compilation
+}
+
+// Destructor Stub
+Account::~Account(void) {
+    // Leave empty
+}
+
+// Other missing methods
+void Account::makeDeposit(int deposit) { (void)deposit; }
+bool Account::makeWithdrawal(int withdrawal) { (void)withdrawal; return false; }
+int  Account::checkAmount(void) const { return _amount; }
+void Account::displayStatus(void) const { }
+void Account::_displayTimestamp(void) { }
