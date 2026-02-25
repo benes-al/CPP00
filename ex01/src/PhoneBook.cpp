@@ -34,12 +34,13 @@ void PhoneBook::searchContacts() const{
 		return ;
 	}
 
-	for (index = 0; index < this->_quantity; index++){
-		std::cout << "|" << std::setw(10) << "index"
+	std::cout << "|" << std::setw(10) << "index"
 		<< "|" << std::setw(10) << "FirstName"
 		<< "|" << std::setw(10) << "LastName"
-		<< "|" << std::setw(10) << "NickName" << "\n"
-		<< "|" << std::setw(10) << index
+		<< "|" << std::setw(10) << "NickName" << "\n";
+
+	for (index = 0; index < this->_quantity; index++){
+		std::cout << "|" << std::setw(10) << index
 		<< "|" << std::setw(10) << formatColumn(this->_contacts[index].getFirstName())
 		<< "|" << std::setw(10) << formatColumn(this->_contacts[index].getLastName())
 		<< "|" << std::setw(10) << formatColumn(this->_contacts[index].getNickName())

@@ -3,6 +3,7 @@
 
 #include <cctype>
 #include <algorithm>
+#include <iostream>
 
 #include "Contact.hpp"
 #include "PhoneBook.hpp"
