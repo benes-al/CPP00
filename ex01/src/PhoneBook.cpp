@@ -30,8 +30,7 @@ void PhoneBook::searchContacts() const{
 	std::string input;
 
 	if (this->_quantity == 0){
-		std::cout << "No contacts registered!\n"
-			<< "Please enter your command:\n";
+		std::cout << "No contacts registered!\n\n";
 		return ;
 	}
 
@@ -49,7 +48,10 @@ void PhoneBook::searchContacts() const{
 
 	std::cout << "Please select the contact index to search:\n";
 	while(1){
-		std::getline(std::cin, input);
+		if (!std::getline(std::cin, input)){
+			std::cout << "Exiting at your request!" << std::endl;
+			break;
+		}
 		if (input.empty()){
 			std::cout << "Please enter a contact index:\n";
 		}

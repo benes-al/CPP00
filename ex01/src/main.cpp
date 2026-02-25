@@ -12,30 +12,53 @@ int main(int argc, char **argv){
 		std::cout << "Please enter your command:\n\"ADD\":to"
 			" add a new contact\n\"SEARCH\":to search for a contact"
 			"\n\"EXIT\":to exit your PhoneBook\n";
-		std::getline(std::cin, input);
+		if (!std::getline(std::cin, input)){
+			std::cout << "Exiting at your request!" << std::endl;
+			break;
+		}
 
         if (input == "ADD"){
             std::cout << "Please insert First Name:\n";    
-			std::getline(std::cin, input);
+			
+			if (!std::getline(std::cin, input)){
+				std::cout << "Exiting at your request!" << std::endl;
+				break;
+			}
+
         	while (input.empty()){
             	std::cout << "Please insert First Name:\n";    
-				std::getline(std::cin, input);
+				if (!std::getline(std::cin, input)){
+					std::cout << "Exiting at your request!" << std::endl;
+					break;
+				}
 			}
 			newContact.setFirstName(input);
 
 			std::cout << "Please insert Last Name:\n";    
-			std::getline(std::cin, input);
+			if (!std::getline(std::cin, input)){
+				std::cout << "Exiting at your request!" << std::endl;
+				break;
+			}
         	while (input.empty()){
             	std::cout << "Please insert Last Name:\n";    
-				std::getline(std::cin, input);
+				if (!std::getline(std::cin, input)){
+					std::cout << "Exiting at your request!" << std::endl;
+					break;
+				}
 			}
 			newContact.setLastName(input);
 
 			std::cout << "Please insert Nick Name:\n";    
-			std::getline(std::cin, input);
+			if (!std::getline(std::cin, input)){
+				std::cout << "Exiting at your request!" << std::endl;
+				break;
+			}
         	while (input.empty()){
             	std::cout << "Please insert Nick Name:\n";    
-				std::getline(std::cin, input);
+				if (!std::getline(std::cin, input)){
+					std::cout << "Exiting at your request!" << std::endl;
+					break;
+				}
 			}
 			newContact.setNickName(input);
 
@@ -43,7 +66,10 @@ int main(int argc, char **argv){
 			std::cout << "Please insert Phone Number:\n";    
 			bool isValid = false;
 			while (!isValid){
-				std::getline(std::cin, input);
+				if (!std::getline(std::cin, input)){
+					std::cout << "Exiting at your request!" << std::endl;
+					break;
+				}
 				
 				if (input.empty()){
 					std::cout << "Input cannot be empty. Please insert Phone Number:\n";
@@ -62,10 +88,16 @@ int main(int argc, char **argv){
 			newContact.setPhoneNumber(input);
 
 			std::cout << "Please insert Darkest Secret:\n";    
-			std::getline(std::cin, input);
+			if (!std::getline(std::cin, input)){
+				std::cout << "Exiting at your request!" << std::endl;
+				break;
+			}
         	while (input.empty()){
             	std::cout << "Please insert Darkest Secret:\n";    
-				std::getline(std::cin, input);
+				if (!std::getline(std::cin, input)){
+					std::cout << "Exiting at your request!" << std::endl;
+					break;
+				}
 			}
 			newContact.setDarkestSecret(input);
 
